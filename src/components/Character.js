@@ -17,7 +17,7 @@ function Character({character}) {
                 <div className={styles.moreInfoContainer} >
                     <p> Status: <span>{character.status} </span>  </p>
                     <p> Species: <span>{character.species}</span> </p>
-                    <p> Type: <span>{character.type !== "" ? character.type : "Information unavailable"  } </span> </p>
+                    <p> Type: <span>{character.type !== "" ? character.type : "unknown"  } </span> </p>
                     <p> Gender: <span>{character.gender} </span> </p> 
                 </div>
             : null

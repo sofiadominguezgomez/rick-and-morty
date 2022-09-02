@@ -18,7 +18,7 @@ function App() {
         const results = data.results
         setCharacters(results)
         setTotalPages(pages)
-        console.log(pages)
+
     } catch (err) {console.log(err)}
 }
 
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-    <Header />
+    <Header page={page} setPage={setPage} totalPages={totalPages} />
     <CharacterList characters={characters} />
     <Footer />
     </div>
