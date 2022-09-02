@@ -1,0 +1,102 @@
+:root {
+    --main-bg-color: #FAF1D3;
+    --header-bg-color: #E7D6C3;
+    --card-bg-color: #BED7B1;
+    --button-bg-color: #C4B4CA;
+    --text-dark-color: #373027;
+    --text-light-color: #FAFAF5;
+    --disabled-color: #C6C8CC;
+    --bg-h2-color: #FDFFA1;
+    --border-color:  #785B2E;
+    --moreInfo-bg-color: #E7F8F8;
+}
+
+.header_container {
+    align-items: center;
+    background-color: var(--header-bg-color);
+    display: flex;
+    gap: 1rem;
+    height: 5rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn{
+    align-self: center;
+    background-color: var(--button-bg-color);
+    border: 0;
+    border-radius: 2rem;
+    color: var(--text-light-color);
+    font-size: large;
+    font-weight: 700;
+    height: 50%;
+    line-height: 50%;
+    padding: .6em 2em;
+}
+
+.btn:hover {
+    background-color: var(--text-dark-color);
+}
+
+.btn:disabled {
+    background-color: var(--disabled-color);
+}
+
+.listContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--main-bg-color);
+}
+
+.characterContainer{
+    width: max-content;
+    height: max-content;
+    padding: 2rem;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card-bg-color);
+}
+.characterContainer h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background-color: var(--bg-h2-color);
+    width: 100%;
+    height: 3rem;
+}
+
+.characterContainer img {
+    margin-bottom: 1rem;
+    -webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.characterContainer img:hover {
+    border: 0.4rem solid var(--border-color);
+    -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.moreInfoContainer {
+    border: 0.4rem solid var(--border-color);
+    background-color: var(--moreInfo-bg-color);
+    margin-top: 1rem;
+    padding: 1rem 2rem 0.5rem 2rem;
+    text-align: center;
+}
+
+.moreInfoContainer p {
+    color: var(--text-dark-color);
+    margin-bottom: 0.7rem;
+}
+
+.moreInfoContainer p span {
+    color:var(--text-dark-color);
+    padding: 0.2rem;
+    border-radius: 2rem;
+    background-color: #FFA187;
+}
