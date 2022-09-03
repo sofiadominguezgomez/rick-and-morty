@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import styles from '../styles/container.module.css'
 
+
 function Character({character}) {
     const [more, setMore] = useState(false);
 
