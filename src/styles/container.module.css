@@ -9,7 +9,9 @@
     --bg-h2-color: #FDFFA1;
     --border-color:  #785B2E;
     --moreInfo-bg-color: #E7F8F8;
+    --footer-bg-color: #26354B;
 }
+
 
 .loading {
     height: 100vh;
@@ -68,6 +70,19 @@
 
 .btn:disabled {
     background-color: var(--disabled-color);
+}
+
+.header_span{
+    background-color: var(--moreInfo-bg-color);
+    color: var(--text-dark-color);
+    width: 3rem;
+    height: 3rem;
+    font-size: larger;
+    font-weight: bolder;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .listContainer {
@@ -133,4 +148,54 @@
     padding: 0.3rem;
     border-radius: 2rem;
     background-color: #FFA187;
+}
+
+.footer_container {
+    height: max-content;
+    width: 100%;
+    background-color: var(--footer-bg-color);
+    color: var(--text-light-color);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.media{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.git {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer_container a {
+    color: var(--text-light-color);
+    text-decoration: none;
+}
+.footer_container a:hover {
+    color: lightblue;
+}
+
+.api {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+.api img {
+    width: 6rem;
+    border-radius: 2rem;
+}
+
+.disclaimer {
+    text-align: center;
 }
