@@ -85,6 +85,37 @@
     align-items: center;
 }
 
+.searchbar_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 100%;
+    background-color: var(--main-bg-color);
+}
+
+.searchbar {
+    margin: 1rem 3rem 1rem 3rem;
+    background-color: white;
+    margin-right: 2vh;
+    flex: 1;
+}
+
+.searchbar input {
+    padding: 1vh;
+    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.25);
+    border: none;
+    width: 100%;
+}
+
+.searchbar input:focus {
+    outline:none;
+}
+
+.searchbar_container button {
+    margin-right: 3rem;
+} 
+
 .listContainer {
     display: flex;
     flex-wrap: wrap;

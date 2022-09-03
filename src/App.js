@@ -4,6 +4,7 @@ import Footer from "./components/Footer.js";
 import { useState, useEffect } from "react";
 import { getCharacters } from './services/api'
 import Loading from "./components/Loading";
+import Searchbar from "./components/Searchbar";
 
 
 
@@ -14,7 +15,9 @@ function App() {
   const [totalPages, setTotalPages] =useState(0)
   const [characters, setCharacters] = useState([])
 
-  const fetchCharacters = async() => {
+
+  useEffect( () => {
+    const fetchCharacters = async() => {
     try {
       setLoading(true)
         const data = await getCharacters(page)
@@ -25,11 +28,10 @@ function App() {
       setLoading(false)
 
     } catch (err) {console.log(err)}
-}
-
-  useEffect( () => {
-      fetchCharacters()
+  };
+      fetchCharacters();
   }, [page])
+
 
   if (loading) {
     return <Loading />
@@ -37,6 +39,7 @@ function App() {
       return (
         <div className="App">
         <Header page={page} setPage={setPage} totalPages={totalPages} />
+        <Searchbar />
         <CharacterList characters={characters} loading={loading} />
         <Footer />
         </div>
