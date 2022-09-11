@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { getLocationById } from '../services/api'
+import { Link, useParams } from 'react-router-dom'
+import {getLocationById } from '../services/api'
 import Loading from './Loading'
 import styles from '../styles/location.module.css'
+
+
 
 const LocationDetail = () => {
     const [loading, setLoading] = useState(true)
     const [location, setLocation] = useState({})
     const [residents, setResidents] = useState({})
     const {id} = useParams()
+
+    
 
     useEffect( () => {
         const fetchLocationById = async(id) => {
@@ -20,9 +24,12 @@ const LocationDetail = () => {
             setLoading(false)
             } catch (err) {console.log(err)}
         };
+        
         fetchLocationById(id)
+        
     }, [id] )
-
+    
+    
 
   return (
     <>
@@ -35,6 +42,17 @@ const LocationDetail = () => {
                 <p>Type: <span> {location.type} </span> </p>
                 <p>Dimension: <span> {location.dimension} </span> </p>
                 <p>Residentes: </p>
+                <div className={styles.residents}>
+                    {
+                    residents.map( (r) =>{
+                        let idx = r.split('/')
+                        let ids = [];
+                        ids.push(idx.pop()) 
+                        return <Link className={styles.home} to={`/character/${ids}`}> More information </Link>
+                    } )
+                }
+                </div>
+                
             </div>
         }
     </>

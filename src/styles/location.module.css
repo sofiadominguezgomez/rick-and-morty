@@ -12,6 +12,12 @@
     --footer-bg-color: #26354B;
 }
 
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .listContainer {
     display: flex;
     flex-wrap: wrap;
@@ -30,7 +36,7 @@
     background-color: var(--card-bg-color);
 }
 
-.locationContainer h1{
+h1{
     overflow: hidden;  
     display: flex;
     align-items: center;
@@ -52,7 +58,7 @@
     color: var(--text-light-color);
     font-size: large;
     font-weight: 700;
-    height: 50%;
+    height: max-content;
     padding: .6em 2em;
 }
 
@@ -63,4 +69,32 @@
 
 .home:disabled {
     background-color: var(--disabled-color);
+}
+
+p {
+    margin-bottom: 0.7rem;
+}
+
+p span {
+    color:var(--text-dark-color);
+    padding: 0.3rem;
+    border-radius: 2rem;
+    background-color: #FFA187;
+}
+
+.locationDetail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75vh;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--card-bg-color);
+}
+
+.residents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }

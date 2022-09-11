@@ -4,7 +4,7 @@ import { getCharacterById } from '../services/api'
 import styles from '../styles/container.module.css'
 import Loading from './Loading'
 
-const MoreInfo = () => {
+const MoreInfo = ({ids}) => {
   const [loading, setLoading] = useState(true)
   const [character, setCharacter] = useState({})
   const [location, setLocation] = useState({})

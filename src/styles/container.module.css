@@ -13,8 +13,12 @@
     
 }
 
-.app {
-    min-height: 100vh;
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -259,7 +263,8 @@
 }
 
 .footer_container {
-    margin: 0;
+
+    margin-top: auto;
     height: max-content;
     width: 100%;
     background-color: var(--footer-bg-color);
@@ -267,6 +272,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+
 }
 
 .media{
