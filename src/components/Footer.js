@@ -5,7 +5,7 @@ import api_logo from '../media/rick_and_morty.png'
 
 function Footer() {
   return (
-    <div className={styles.footer_container}>
+    <footer className={styles.footer_container}>
     <div className={styles.media} >
         <div className={styles.git} >
             <picture> <img src={github} alt='github logo' /> </picture>
@@ -24,7 +24,7 @@ function Footer() {
         </div>
         
         
-    </div>
+    </footer>
   )
 }
 

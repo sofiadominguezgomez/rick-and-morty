@@ -1,6 +1,6 @@
 :root {
     --main-bg-color: #FAF1D3;
-    --header-bg-color: #E7D6C3;
+    --Navbar-bg-color: #E7D6C3;
     --card-bg-color: #BED7B1;
     --button-bg-color: #C4B4CA;
     --text-dark-color: #373027;
@@ -10,11 +10,20 @@
     --border-color:  #785B2E;
     --moreInfo-bg-color: #E7F8F8;
     --footer-bg-color: #26354B;
+    
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
 .loading {
-    height: 100vh;
+    margin: 0;
+    height: 75vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,24 +41,38 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: larger;
-    background-color: var(--main-bg-color);
-    color: var(--text-dark-color);
+    font-size: 5vh;
+    height: calc(100vh - 10vh);
+    width: 100%;
+    background-image: url('../media/bg.jpg');
+    background-position: top;
+    background-size: contain;
+
+    color: var(--text-light-color);
+    
 }
 
-.header_container {
+.header {
+    display: flex;
     align-items: center;
-    background-color: var(--header-bg-color);
+    justify-content: center;
+    height: 10vh;
+    width: 100%;
+    background-color: var(--Navbar-bg-color);
+}
+
+.Navbar_container {
+    align-items: center;
+    background-color: var(--Navbar-bg-color);
     display: flex;
     gap: 1rem;
     height: 5rem;
     justify-content: center;
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
-
-.header_container.fixed {
-    position: fixed;
- }
 
 .btn{
     align-self: center;
@@ -72,7 +95,29 @@
     background-color: var(--disabled-color);
 }
 
-.header_span{
+.home {
+    text-decoration: none;
+    align-self: center;
+    background-color: var(--button-bg-color);
+    border: 0;
+    border-radius: 2rem;
+    color: var(--text-light-color);
+    font-size: large;
+    font-weight: 700;
+    height: 50%;
+    padding: .6em 2em;
+}
+
+.home:hover {
+    background-color: var(--text-dark-color);
+    color: var(--text-light-color);
+}
+
+.home:disabled {
+    background-color: var(--disabled-color);
+}
+
+.Navbar_span{
     background-color: var(--moreInfo-bg-color);
     color: var(--text-dark-color);
     width: 3rem;
@@ -159,29 +204,61 @@
 	transform: scale(1.3);
 }
 
-.moreInfoContainer {
-    border: 0.4rem solid var(--border-color);
-    background-color: var(--moreInfo-bg-color);
-    margin-top: 1rem;
-    padding: 1rem;
-    width: 100%;
-    height: 100%;
+.characterDetail {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: var(--card-bg-color);
+}
+.moreInfoTitle {
     text-align: center;
+    background-color: var(--bg-h2-color);
 }
 
-.moreInfoContainer p {
+.characterDetail button {
+    margin-bottom: 2rem;
+    height: 5vh;
+    width: 90%;
+}
+.moreInfoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--card-bg-color);
+    padding: 1rem;
+    width: 100%;
+    height: 75vh;
+    text-align: center;
+}
+.moreInfoContainer picture img {
+    width: 50vh;
+}
+.detail {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.detail p {
     color: var(--text-dark-color);
     margin-bottom: 0.7rem;
 }
 
-.moreInfoContainer p span {
+.detail p span {
     color:var(--text-dark-color);
     padding: 0.3rem;
     border-radius: 2rem;
     background-color: #FFA187;
 }
 
+.detail .btn {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
 .footer_container {
+    margin: 0;
     height: max-content;
     width: 100%;
     background-color: var(--footer-bg-color);
