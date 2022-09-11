@@ -86,7 +86,7 @@ p span {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 75vh;
+    height: max-content;
     width: 100%;
     gap: 1rem;
     padding: 1rem;

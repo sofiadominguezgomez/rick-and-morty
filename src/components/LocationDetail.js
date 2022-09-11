@@ -50,7 +50,7 @@ const LocationDetail = () => {
                         ids.push(idx.pop()) 
                         return <Link className={styles.home} to={`/character/${ids}`}> More information </Link>
                     } )
-                }
+                    }
                 </div>
                 
             </div>

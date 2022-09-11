@@ -111,6 +111,7 @@ body {
     font-weight: 700;
     height: 50%;
     padding: .6em 2em;
+    
 }
 
 .home:hover {
@@ -121,6 +122,11 @@ body {
 .home:disabled {
     background-color: var(--disabled-color);
 }
+
+.home.car{
+    margin-bottom: 1rem;
+}
+
 
 .Navbar_span{
     background-color: var(--moreInfo-bg-color);
@@ -215,6 +221,38 @@ body {
     flex-wrap: wrap;
     background-color: var(--card-bg-color);
 }
+
+.episodeContainer{
+    display: flex ;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-width: 100%;
+    
+}
+
+.episodebtn {
+    text-decoration: none;
+    align-self: center;
+    background-color: var(--button-bg-color);
+    border: 0;
+    border-radius: 2rem;
+    color: var(--text-light-color);
+    font-size: large;
+    font-weight: 700;
+    height: max-content;
+    padding: 0.2rem;
+    margin: 0.5rem;
+}
+
+.episodebtn:hover {
+    background-color: var(--text-dark-color);
+    color: var(--text-light-color);
+}
+
+.episodebtn:disabled {
+    background-color: var(--disabled-color);
+}
+
 .moreInfoTitle {
     text-align: center;
     background-color: var(--bg-h2-color);
@@ -225,8 +263,12 @@ body {
     height: 5vh;
     width: 90%;
 }
+
+
+
 .moreInfoContainer {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
@@ -242,12 +284,19 @@ body {
 .detail {
     display: flex;
     flex-direction: column;
-    text-align: start;
+    text-align: center;
+    height: fit-content;
+    width: 50%;
+}
+
+.detailed {
+    height: max-content;
 }
 
 .detail p {
     color: var(--text-dark-color);
     margin-bottom: 0.7rem;
+    margin: 1rem;
 }
 
 .detail p span {
@@ -260,6 +309,7 @@ body {
 .detail .btn {
     margin-bottom: 1rem;
     width: 100%;
+    
 }
 
 .footer_container {

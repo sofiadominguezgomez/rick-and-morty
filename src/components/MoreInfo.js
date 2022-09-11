@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { getCharacterById } from '../services/api'
 import styles from '../styles/container.module.css'
 import Loading from './Loading'
 
-const MoreInfo = ({ids}) => {
+const MoreInfo = () => {
   const [loading, setLoading] = useState(true)
   const [character, setCharacter] = useState({})
   const [location, setLocation] = useState({})
@@ -28,6 +28,15 @@ const MoreInfo = ({ids}) => {
   }, [id]
   )
 
+  const getLinkId = (url) => {
+    url.split("/")
+    let idx = url.split('/')
+    let ids = [];
+    ids.push(idx.pop())
+    return ids
+  }
+
+
   return (
     <>
     {
@@ -48,16 +57,25 @@ const MoreInfo = ({ids}) => {
           </div>
 
           <div className={styles.detail}>
+						<div className={styles.detailed} >
             <p> Status: <span>{character.status} </span>  </p>
             <p> Species: <span>{character.species}</span> </p>
             <p> Type: <span>{character.type !== "" ? character.type : "unknown"  } </span> </p>
             <p> Gender: <span>{character.gender} </span> </p>
             <p> Origin: <span> {origin.name} </span> </p>
-            <button className={styles.btn}> Ir a origen </button>
+            <Link className={ `${styles.home} car` } to={`/location/${getLinkId(origin.url)}`}> See origin Location </Link>
             <p> Location: <span>{location.name}</span> </p>
-            <button className={styles.btn}> Ir a Location </button>
-            <p> Episodes: <span> {episode.length} </span> </p>
-            <button className={styles.btn}> Ir a Episodes </button>
+            <Link className={styles.home} to={`/location/${getLinkId(location.url)}`}> See Location </Link>
+            </div>
+						<p> Episodes: <span> {episode.length} </span> </p>
+						<div className={styles.episodeContainer}>
+							{
+              episode.map( (e) =>{
+                        return <Link key={e} className={styles.episodebtn} to={`/episode/${getLinkId(e)}`}> e </Link>
+                    } )
+            	}
+						</div>
+            
           </div>
           
         </div>
