@@ -1,12 +1,19 @@
 import React from 'react'
-import { NavLink} from 'react-router-dom'
+import { NavLink, useNavigate, useMatch} from 'react-router-dom'
 import styles from '../styles/container.module.css'
 
 const Header = () => {
-
+  const navigate = useNavigate();
+  const isHome = useMatch("/")
+  const buttonBack = () =>{
+    navigate(-1)
+}
   return (
     <nav className={styles.header}>
-         <NavLink to="/" className={styles.home} >Home</NavLink> 
+        {!isHome && <button onClick={buttonBack} className={styles.btn} >BACK</button>}
+         <NavLink to="/" className={styles.home} >Characters</NavLink>
+         <NavLink to="/location" className={styles.home} >Locations</NavLink>  
+         <NavLink to="/episode" className={styles.home} >Episodes</NavLink>
     </nav>
   )
 }

@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CharacterList from "./components/CharacterList";
 import Footer from "./components/Footer.js";
 import Header from "./components/Header";
+import LocationDetail from "./components/LocationDetail";
+import LocationList from "./components/LocationList";
 import MoreInfo from "./components/MoreInfo";
 import NotFound from "./components/NotFound";
 import styles from './styles/container.module.css'
@@ -16,8 +18,10 @@ function App() {
           <BrowserRouter>
           <Header />
             <Routes>
-              <Route path="/" element={<CharacterList />} />
-              <Route path="/character/:id" element={<MoreInfo />}></Route>
+              <Route exact path="/" element={<CharacterList />} />
+              <Route exact path="/character/:id" element={<MoreInfo />}></Route>
+              <Route exact path="location" element={<LocationList />}></Route>
+              <Route exact path="/location/:id" element={<LocationDetail />}></Route>
               <Route path="*" element={ <NotFound /> } />
             </Routes>
 

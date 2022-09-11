@@ -55,7 +55,8 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    
     height: 10vh;
     width: 100%;
     background-color: var(--Navbar-bg-color);

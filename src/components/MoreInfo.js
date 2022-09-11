@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getCharacterById } from '../services/api'
 import styles from '../styles/container.module.css'
 import Loading from './Loading'

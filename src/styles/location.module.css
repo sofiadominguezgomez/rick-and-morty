@@ -1,0 +1,66 @@
+:root {
+    --main-bg-color: #FAF1D3;
+    --Navbar-bg-color: #E7D6C3;
+    --card-bg-color: #BED7B1;
+    --button-bg-color: #C4B4CA;
+    --text-dark-color: #373027;
+    --text-light-color: #FAFAF5;
+    --disabled-color: #C6C8CC;
+    --bg-h2-color: #FDFFA1;
+    --border-color:  #785B2E;
+    --moreInfo-bg-color: #E7F8F8;
+    --footer-bg-color: #26354B;
+}
+
+.listContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--main-bg-color);
+}
+
+.locationContainer {
+    width: 25rem;
+    height: max-content;
+    padding: 2rem;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card-bg-color);
+}
+
+.locationContainer h1{
+    overflow: hidden;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
+    background-color: var(--bg-h2-color);
+    width: 100%;
+    height: max-content;
+    text-overflow: ellipsis;
+}
+
+.home {
+    text-decoration: none;
+    align-self: center;
+    background-color: var(--button-bg-color);
+    border: 0;
+    border-radius: 2rem;
+    color: var(--text-light-color);
+    font-size: large;
+    font-weight: 700;
+    height: 50%;
+    padding: .6em 2em;
+}
+
+.home:hover {
+    background-color: var(--text-dark-color);
+    color: var(--text-light-color);
+}
+
+.home:disabled {
+    background-color: var(--disabled-color);
+}
