@@ -61,3 +61,27 @@ export const getLocationById = async(id)  => {
   return data;
   } catch(err) {console.log(err)} 
 }
+
+export const getEpisodes = async (page=null) => {
+  try {
+    let url =`${baseUrl}episode/${page ? `?page=${page}` : ''}`;
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw Error("Resource could not be located")
+     }
+    const data = await response.json();
+    return data;
+  } catch (err) {console.log(err)}
+};
+
+export const getEpisodeById = async(id)  => {
+  try{
+    let url = `${baseUrl}episode/${id}`;
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw Error("Resource could not be located")
+   }
+  const data = await response.json();
+  return data;
+  } catch(err) {console.log(err)} 
+}

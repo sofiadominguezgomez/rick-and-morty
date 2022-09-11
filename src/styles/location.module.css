@@ -97,4 +97,5 @@ p span {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    width: 75%;
 }
